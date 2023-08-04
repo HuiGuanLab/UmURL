@@ -1,5 +1,5 @@
 # Unified Multi-modal Unsupervised Representation Learning for Skeleton-based Action Understanding
-This is a repository contains the implementation of our proposed UmURL.
+This is a repository containing the implementation of our ACM MM 2023 paper UmURL.
 
 <div align="center">
     <img src="figure/method.png" width="85%">
@@ -58,7 +58,9 @@ It will automatically evaluate the checkpoint from the final epoch obtained from
 ```
 
 
-## Downstream Performance
+## Pretrained Models
+We release several pre-trained models:
+- [coming soon]  
 Expected performance on skeleton-based action recognition and  skeleton-based action retrieval:  
 
 |        Task        | NTU 60 x-sub (%) | NTU 60 x-view (%) | NTU 120 x-sub (%) | NTU 120 x-setup (%) |
