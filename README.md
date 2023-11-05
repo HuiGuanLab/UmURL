@@ -75,3 +75,15 @@ our proposed UmURL on NTU-60. 10 classes from the x-view testing set are randoml
 <div align="center">
     <img src="figure/tsne.png" width="75%">
 </div>
+
+## Citation
+If you find this repository useful, please consider citing our paper:
+```
+@inproceedings{sun2023unified,
+  title={Unified Multi-modal Unsupervised Representation Learning for Skeleton-based Action Understanding},
+  author={Sun, Shengkai and Liu, Daizong and Dong, Jianfeng and Qu, Xiaoye and Gao, Junyu and Yang, Xun and Wang, Xun and Wang, Meng},
+  booktitle={Proceedings of the 31st ACM International Conference on Multimedia},
+  pages={2973--2984},
+  year={2023}
+}
+```
