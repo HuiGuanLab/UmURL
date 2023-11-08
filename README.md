@@ -28,7 +28,7 @@ pip3 install tensorboard
       ...
     - samples_with_missing_skeletons.txt
 ```
-- Preprocess data with with `data_gen/ntu_gendata.py`.
+- Preprocess data with `data_gen/ntu_gendata.py`.
 ```
 cd data_gen
 python ntu_gendata.py
