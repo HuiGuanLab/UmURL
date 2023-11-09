@@ -4,7 +4,7 @@
 **Paper Link**: [arXiv](https://arxiv.org/abs/2311.03106), [ACM DL](https://dl.acm.org/doi/10.1145/3581783.3612449)
 
 <div align="center">
-    <img src="figure/method.png" width="85%">
+    <img src="figure/method.png" width="75%">
 </div>
 
 ## Requirements
@@ -40,28 +40,39 @@ Our implementation is based on automatic mixed precision (***amp***) and  Distri
 #### Unsupervised Pre-training
 - Run the following script for pretraining. It will save the checkpoints to `./checkpoints/ntu60_xsub`.
 ```
-# here is an example
+# Here is an example
 ./script_pretrain.sh
 ```
-The default setting is to pretrain with NTU-60 x-sub protocol. Please refer to the bash scripts for other pretraining configurations. 
+The default setting is to pre-train with NTU-60 x-sub protocol. Please refer to the bash scripts for other pretraining configurations. 
 
 #### Downstream Task Evaluation
-- **Task1: Skeleton-based action recognition**. Train a linear classifier on pretrained encoder. The parameter meaning is the same as above. Multi-modal representations are utilized here.
+- **Task1: Skeleton-based action recognition**. Train a linear classifier on the pre-trained encoder. Multi-modal representations are utilized here.
 ```
-# ./script_action_recognition.sh $TEST_NAME
-./script_action_recognition.sh ntu120_xsub
+# ./script_action_recognition.sh $dir $dataset $protocol
+./script_action_recognition.sh ntu60_xsub ntu60 cross_subject
 ```
-It will automatically evaluate the checkpoint from the final epoch obtained from the aforementioned pre-training.
+`$dir` is the folder where the checkpoints are saved.
 
-- **Task2: Skeleton-based action retrieval**. Apply a KNN classifier on on pretrained encoder. It's similar to action recognition, here is an example. 
-```
-./script_action_retrieval.sh ntu120_xsub
-```
+`$dataset` is the dataset to use for unsupervised pre-training (ntu60 or ntu120).
 
+`$protocol` means training protocol (cross_subject/cross_view for ntu60, and cross_subject/cross_setup for ntu120).
+
+It will automatically evaluate the checkpoint from the final epoch obtained from the aforementioned pre-training. Please refer to the bash scripts for other pre-training configurations.
+
+- **Task2: Skeleton-based action retrieval**. Apply a KNN classifier on the pre-trained encoder. It's similar to action recognition, here is an example. 
+```
+# ./script_action__retrieval.sh $dir $dataset $protocol
+./script_action_retrieval.sh ntu60_xsub ntu60 cross_subject
+```
+`$dir` is the folder where the checkpoints are saved.
+
+`$dataset` is the dataset to use for unsupervised pre-training (ntu60 or ntu120).
+
+`$protocol` means training protocol (cross_subject/cross_view for ntu60, and cross_subject/cross_setup for ntu120).
 
 ## Pretrained Models
-We release several pre-trained models:
-- [coming soon]  
+We release several pre-trained models: [Google Drive](https://drive.google.com/drive/folders/1vDGfEFRVDEU5VnutrHmyAb9RnZT_udF4?usp=sharing)
+
 Expected performance on skeleton-based action recognition and  skeleton-based action retrieval:  
 
 |        Task        | NTU 60 x-sub (%) | NTU 60 x-view (%) | NTU 120 x-sub (%) | NTU 120 x-setup (%) |
