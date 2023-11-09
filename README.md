@@ -67,7 +67,7 @@ Expected performance on skeleton-based action recognition and  skeleton-based ac
 
 |        Task        | NTU 60 x-sub (%) | NTU 60 x-view (%) | NTU 120 x-sub (%) | NTU 120 x-setup (%) |
 | :----------------: | :--------------: | :---------------: | :---------------: | :-----------------: |
-| action recognition |       84.2       |       90.9        |       75.2        |        74.3         |
+| action recognition |       84.2       |       90.9        |       75.2        |        76.3         |
 |  action retrieval  |       72.0       |       88.9        |       59.5        |        62.2         |
 
 ## Visualization
