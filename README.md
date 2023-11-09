@@ -38,13 +38,12 @@ python ntu_gendata.py
 ## Pretraining and Evaluation
 Our implementation is based on automatic mixed precision (***amp***) and  Distributed Data Parallel (***DDP***).
 #### Unsupervised Pre-training
-- Run the following script for pretraining. It will save the checkpoints to `./checkpoints/$TEST_NAME/`.
+- Run the following script for pretraining. It will save the checkpoints to `./checkpoints/ntu60_xsub`.
 ```
-# ./script_pretrain.sh $TEST_NAME
 # here is an example
-./script_pretrain.sh ntu120_xsub
+./script_pretrain.sh
 ```
-`$TEST_NAME` is the name of the folder where the checkpoints are saved in. The default setting is to pretrain with NTU-120 x-sub protocol. Please refer to the bash scripts for other pretraining configurations. 
+The default setting is to pretrain with NTU-60 x-sub protocol. Please refer to the bash scripts for other pretraining configurations. 
 
 #### Downstream Task Evaluation
 - **Task1: Skeleton-based action recognition**. Train a linear classifier on pretrained encoder. The parameter meaning is the same as above. Multi-modal representations are utilized here.
